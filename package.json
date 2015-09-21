@@ -1,0 +1,19 @@
+{
+  "name": "coolface",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@mgyarmathy_",
+  "license": "ISC",
+  "dependencies": {
+    "cool-ascii-faces": "^1.3.3",
+    "express": "^4.13.3"
+  },
+  "engines": {
+    "node": "0.12.x"
+  }
+}
