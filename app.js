@@ -6,4 +6,4 @@ app.get('/', function(req, res) {
     res.send(cool() + '\n')
 })
 
-app.listen(1337);
+app.listen(80);
