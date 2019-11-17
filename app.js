@@ -128,8 +128,8 @@ const faces = [
   "(((╹д╹;)))",
   "•̀.̫•́✧",
   "(ᵒ̤̑ ₀̑ ᵒ̤̑)",
-  "\_(ʘ_ʘ)_/"
-]
+  "\_(ʘ_ʘ)_/",
+];
 
 
 const port = process.env.PORT || 3000;
@@ -145,6 +145,9 @@ Array.prototype.sample = function() {
 };
 
 Array.prototype.max = function(max) {
+  if (max <= 0) {
+    return this;
+  }
   var arr = [];
   for (var i = 0; i < this.length; i++) {
     if (this[i].length <= max) {
@@ -156,10 +159,10 @@ Array.prototype.max = function(max) {
 
 app.get('/', function(req, res) {
   console.log(req);
-  const max_face_length = (req.query.max_face_length) ? req.query.max_face_length : 32;
+  const max_face_length = (req.query.max_face_length) ? req.query.max_face_length : 0;
   res.send(faces.max(max_face_length).sample() + '\n');
 });
 
-app.listen(port, function () {
+app.listen(port, function() {
   console.log('Listening on port ' + port);
 });
